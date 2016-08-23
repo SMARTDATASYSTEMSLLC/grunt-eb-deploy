@@ -24,13 +24,14 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       archive: '.tmp/dist.zip',
-      region: 'us-east-1'
+      region: 'us-east-1',
+      level: 1
     });
 
     compress.options = {
       archive: options.archive,
       mode: 'zip',
-      level: 1
+      level: options.level
     };
 
     var done = this.async();
